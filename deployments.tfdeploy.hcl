@@ -25,6 +25,7 @@ deployment "Account_892306418059" {
   }
 }
 
+# Additional rules to auto-approve all operations
 # orchestrate "auto_approve" "all_plan_operations" {
 #     check {
 #         condition = context.operation == "plan"
@@ -32,6 +33,7 @@ deployment "Account_892306418059" {
 #     }
 # }
 
+# Additional rules to auto-approve specific account
 # orchestrate "auto_approve" "special_account" {
 #     check {
 #         condition = context.plan.deployment == deployment.Account_027320203244
