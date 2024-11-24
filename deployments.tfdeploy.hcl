@@ -25,12 +25,12 @@ deployment "Account_892306418059" {
   }
 }
 
-orchestrate "auto_approve" "all_plan_operations" {
-    check {
-        condition = context.operation == "plan"
-        reason = "Auto-approve every accounts"
-    }
-}
+# orchestrate "auto_approve" "all_plan_operations" {
+#     check {
+#         condition = context.operation == "plan"
+#         reason = "Auto-approve every accounts"
+#     }
+# }
 
 # orchestrate "auto_approve" "special_account" {
 #     check {
