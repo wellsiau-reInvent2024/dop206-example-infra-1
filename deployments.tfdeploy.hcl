@@ -3,7 +3,7 @@ identity_token "aws" {
   audience = ["aws.workload.identity"]
 }
 
-deployment "Account_027320203244" {
+deployment "Account_1" {
   inputs = {
     region         = "us-east-1"
     identity_token = identity_token.aws.jwt
@@ -14,7 +14,7 @@ deployment "Account_027320203244" {
   }
 }
 
-deployment "Account_892306418059" {
+deployment "Account_2" {
   inputs = {
     region         = "us-east-1"
     identity_token = identity_token.aws.jwt
@@ -36,7 +36,7 @@ deployment "Account_892306418059" {
 # Additional rules to auto-approve specific account
 # orchestrate "auto_approve" "special_account" {
 #     check {
-#         condition = context.plan.deployment == deployment.Account_027320203244
-#         reason = "Auto-approve for account Account_027320203244"
+#         condition = context.plan.deployment == deployment.Account_1
+#         reason = "Auto-approve for account Account_1"
 #     }
 # }
