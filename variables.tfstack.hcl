@@ -12,6 +12,7 @@ variable "identity_token" {
 # Role ARN for AWS provider
 variable "role_arn" {
   type = string
+  ephemeral = true
 }
 
 # Set to true if you want to deploy the example IAM role
