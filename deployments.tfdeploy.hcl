@@ -3,11 +3,16 @@ identity_token "aws" {
   audience = ["aws.workload.identity"]
 }
 
+store "varset" "roles" {
+  id       = "varset-xzwF62h3nMFLrXp8" #stacks_infra1_roles
+  category = "env"
+}
+
 deployment "Account_1" {
   inputs = {
     region         = "us-east-1"
     identity_token = identity_token.aws.jwt
-    role_arn       = "arn:aws:iam::027320203244:role/HCPTerraform-Role-StackSet"
+    role_arn       = store.varset.roles.role_1
     default_tags   = { stacks-environment = "dop206-example-infra-1-new" }
     enable_security_scanner = true
     enable_finops_scanner   = true
@@ -18,7 +23,7 @@ deployment "Account_2" {
   inputs = {
     region         = "us-east-1"
     identity_token = identity_token.aws.jwt
-    role_arn       = "arn:aws:iam::892306418059:role/HCPTerraform-Role-StackSet"
+    role_arn       = store.varset.roles.role_2
     default_tags   = { stacks-environment = "dop206-example-infra-1-new" }
     enable_security_scanner = true
     enable_finops_scanner   = true
