@@ -4,7 +4,7 @@ identity_token "aws" {
 }
 
 store "varset" "roles" {
-  id       = "varset-xzwF62h3nMFLrXp8"
+  id       = "varset-xzwF62h3nMFLrXp8" #stacks_infra1_roles
   category = "env"
 }
 
